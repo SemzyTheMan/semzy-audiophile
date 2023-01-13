@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Button from "../components/button";
 import styles from "../styles/Home.module.css";
 import ShopSection from "../containers/ShopSection";

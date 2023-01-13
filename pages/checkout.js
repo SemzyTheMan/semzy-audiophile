@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/Checkout.module.css";
 import { settotalQuantity } from "../store/action";
@@ -22,9 +23,9 @@ function checkout() {
     formState: { errors, isValid },
   } = useForm();
   useEffect(() => {
-  document.body.style.backgroundColor = "#eee";
-},[])
-  
+    document.body.style.backgroundColor = "#eee";
+  }, []);
+
   const states = (state) => state.showMobileModal;
   const show = useSelector(states);
   useEffect(() => {

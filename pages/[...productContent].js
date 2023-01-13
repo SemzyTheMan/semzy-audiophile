@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import styles from "../styles/ProContent.module.css";
 import MayLike from "../components/MayLike";
 import data from "../public/products.json";

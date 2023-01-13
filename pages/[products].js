@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
 import data from "../public/products.json";
 import { useDispatch, useSelector } from "react-redux";
 import { settotalQuantity } from "../store/action";
-import { router } from "next/router";
 import styles from "../styles/Product.module.css";
 function products({ products, product, params }) {
   const states = (state) => state.showMobileModal;
