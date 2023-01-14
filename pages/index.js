@@ -16,7 +16,7 @@ function Home() {
   useEffect(() => {
     show
       ? (document.body.style.overflowY = "hidden")
-      : (document.body.style.overflowY = "scroll");
+      : (document.body.style.overflowY = "visible");
     show
       ? (document.body.style.height = "100vh")
       : (document.body.style.height = "auto");
