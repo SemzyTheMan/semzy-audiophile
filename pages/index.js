@@ -10,7 +10,9 @@ import { useRouter } from "next/router";
 function Home() {
   const states = (state) => state.showMobileModal;
   const show = useSelector(states);
-
+  useEffect(() => {
+    document.body.style.backgroundColor = "white";
+  }, []);
   useEffect(() => {
     show
       ? (document.body.style.overflowY = "hidden")

@@ -1,4 +1,5 @@
 .Container {
+  overflow-y: hidden;
 }
 .Main {
   background-image: url("../public/images/home/desktop/image-hero.jpg");

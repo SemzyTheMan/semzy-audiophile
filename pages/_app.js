@@ -6,10 +6,12 @@ import { Provider, useDispatch } from "react-redux";
 import { reducer } from "../store/reducer";
 import CartCard from "../components/cartCard";
 import MobileModal from "../components/MobileModal";
-
+import { useEffect } from "react";
 export default function App({ Component, pageProps }) {
  
-  
+   useEffect(() => {
+     document.body.style.backgroundColor = "white";
+   }, []);
   const store = createStore(reducer);
 
   return (
