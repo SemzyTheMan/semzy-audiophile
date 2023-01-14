@@ -56,6 +56,7 @@
   margin-top: 10rem;
   justify-content: space-between;
   margin-bottom: 5rem;
+  color: #000;
 }
 @media only screen and (max-width: 425px) {
   .ShopSection {
@@ -72,6 +73,7 @@
 }
 .ShopTitle {
   padding: 0.5rem 0;
+  color: #000;
 }
 .ZX9 {
   display: flex;
