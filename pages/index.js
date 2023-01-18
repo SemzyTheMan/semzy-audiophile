@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Button from "../components/button";
+import { motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
 import ShopSection from "../containers/ShopSection";
 import GearSection from "../containers/GearSection";
@@ -7,6 +8,18 @@ import { use, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { settotalQuantity } from "../store/action";
 import { useRouter } from "next/router";
+
+const myVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 function Home() {
   const states = (state) => state.showMobileModal;
   const show = useSelector(states);
@@ -33,8 +46,13 @@ function Home() {
   const router = useRouter();
   return (
     <div className={styles.Container}>
-      <div className={styles.Main}>
-        <div className={styles.Width}>
+      <motion.div className={styles.Main}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className={styles.Width}
+        >
           <div>
             <h2>NEW PRODUCT</h2>
             <h1>XX99 MARK II HEADPHONES</h1>
@@ -50,10 +68,15 @@ function Home() {
               ></Button>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <ShopSection home={true}></ShopSection>
-      <section className={styles.ZX9Container}>
+      <motion.section
+        variants={myVariants}
+        initial="hidden"
+        whileInView={"visible"}
+        className={styles.ZX9Container}
+      >
         <div className={styles.ZX9}>
           <img src="/images/home/mobile/image-speaker-zx9.png" alt="speaker" />
           <div className={styles.ZX9Text}>
@@ -68,8 +91,13 @@ function Home() {
             ></Button>
           </div>
         </div>
-      </section>
-      <section className={styles.ZX7Container}>
+      </motion.section>
+      <motion.section
+        variants={myVariants}
+        initial="hidden"
+        whileInView={"visible"}
+        className={styles.ZX7Container}
+      >
         <div className={styles.ZX7}>
           <h2>ZX7 SPEAKER</h2>
           <Button
@@ -77,8 +105,13 @@ function Home() {
             clicked={() => router.push("speakers/zx7-speaker")}
           ></Button>
         </div>
-      </section>
-      <section className={styles.YX1Container}>
+      </motion.section>
+      <motion.section
+        variants={myVariants}
+        initial="hidden"
+        whileInView={"visible"}
+        className={styles.YX1Container}
+      >
         <div className={styles.YX1}>
           <div className={styles.YX1img}></div>
 
@@ -90,7 +123,7 @@ function Home() {
             ></Button>
           </div>
         </div>
-      </section>
+      </motion.section>
       <GearSection home={true}></GearSection>
     </div>
   );

@@ -1,8 +1,26 @@
 import styles from "../styles/Containers.module.css";
+import { motion } from "framer-motion";
+
+const gearVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 function GearSection({ home }) {
   return (
-    <div className={`${styles.GearMain} ${home ? styles.Home : ""}`}>
+    <motion.div
+      variants={gearVariant}
+      initial="hidden"
+      whileInView={"visible"}
+      className={`${styles.GearMain} ${home ? styles.Home : ""}`}
+    >
       <div className={styles.Geartext}>
         <h1>BRINGING YOU THE BEST AUDIO GEAR</h1>
         <p>
@@ -15,7 +33,7 @@ function GearSection({ home }) {
         </p>
       </div>
       <img src="/images/shared/desktop/image-best-gear.jpg" alt="gear" />
-    </div>
+    </motion.div>
   );
 }
 
