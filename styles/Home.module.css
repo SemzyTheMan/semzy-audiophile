@@ -1,0 +1,277 @@
+.Container {
+  overflow-y: hidden;
+}
+.Main {
+  background-image: url("../public/images/home/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 8rem 0;
+
+  width: 100%;
+  margin: auto;
+}
+.Width {
+  width: 80%;
+  margin: auto;
+}
+.Width > div {
+  width: 40%;
+}
+.Width > div > h1 {
+  font-size: 3.2rem;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+.Width > div > h2 {
+  color: #ffffff80;
+}
+.Width > div > p {
+  color: #ffffff80;
+  margin-top: 1rem;
+  line-height: 2rem;
+  padding-right: 3rem;
+}
+.Button {
+  margin-top: 2rem;
+}
+.Shop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 0;
+  border-radius: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+.ShopHead {
+  width: 30%;
+  cursor: pointer;
+}
+.ShopSection {
+  display: flex;
+  margin: auto;
+  margin-top: 10rem;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  color: #000;
+}
+@media only screen and (max-width: 425px) {
+  .ShopSection {
+    flex-direction: column;
+  }
+  .ShopHead {
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+.ShopImg {
+  margin-top: -3rem;
+}
+.ShopTitle {
+  padding: 0.5rem 0;
+  color: #000;
+}
+.ZX9 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem 0;
+}
+.ZX9 > img {
+  margin-bottom: -3.1rem;
+}
+.ZX9Text {
+  width: 25%;
+}
+.ZX9Text > h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+.ZX9Text > p {
+  font-size: 1rem;
+  color: #ffffffbf;
+  font-weight: 200;
+  line-height: 1.3rem;
+  padding: 1.4rem 0;
+}
+.ZX9Container {
+  width: 80%;
+  margin: auto;
+  background-color: #d87d48;
+  border-radius: 1rem;
+  background-image: url("../public/images/home/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  overflow-y: hidden;
+  background-position: -20% -10%;
+  margin-bottom: 3rem;
+}
+@media only screen and (max-width: 425px) {
+  .ZX9Container {
+    width: 90%;
+  }
+  .ZX9 {
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+  .ZX9 > img {
+    margin-bottom: 2rem;
+    width: 170px;
+  }
+  .ZX9Text {
+    width: 100%;
+  }
+
+  .ZX9Text > p {
+    padding: 1.4rem 0;
+  }
+}
+.ZX7Container {
+  width: 80%;
+  background-image: url("../public/images/home/desktop/image-speaker-zx7.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  margin: auto;
+  border-radius: 1rem;
+}
+.ZX7 {
+  padding: 5rem 0;
+  padding-left: 5rem;
+}
+.ZX7 > h2 {
+  margin-bottom: 2rem;
+}
+@media only screen and (max-width: 768px){
+  .ZX7Container{
+     background-image: url("../public/images/home/tablet/image-speaker-zx7.jpg");
+  }
+} 
+@media only screen and (max-width: 425px) {
+  .ZX7Container {
+    width: 90%;
+    background-image: url("../public/images/home/mobile/image-speaker-zx7.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+  }
+  .ZX7 {
+    padding: 5rem 0;
+    padding-left: 2rem;
+  }
+  .ZX7 > h2 {
+    margin-bottom: 0.5rem;
+  }
+}
+.YX1Container {
+  width: 80%;
+  margin: auto;
+  margin-top: 3rem;
+}
+.YX1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.YX1img {
+  border-radius: 1rem;
+  width: 49%;
+  height: 15rem;
+  background-image: url("../public/images/home/desktop/image-earphones-yx1.jpg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.YX1Text {
+  width: 49%;
+  padding: 4rem;
+  background-color: #f1f1f1;
+  border-radius: 1rem;
+  align-self: stretch;
+}
+@media only screen and (max-width: 768px){
+  .YX1img{
+    background-image: url("../public/images/home/tablet/image-earphones-yx1.jpg");
+    align-self: stretch;
+  }
+  .YX1Text{
+    padding: 3.5rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .YX1Container {
+    width: 90%;
+    margin-top: 3rem;
+  }
+  .YX1 {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .YX1img {
+    width: 100%;
+    background-image: url("../public/images/home/desktop/image-earphones-yx1.jpg");
+    background-size: 100%;
+  }
+  .YX1Text {
+    width: 100%;
+    padding: 4rem 2rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Main {
+    background-image: url("../public/images/home/tablet/image-hero.jpg");
+  }
+  .Width > div {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .Width {
+    width: 100%;
+  }
+  .Main {
+    background-image: url("../public/images/home/mobile/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 7rem 0;
+    padding-bottom: 11rem;
+    width: 100%;
+  }
+  .Width > div {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .Width > div > h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-top: 1rem;
+  }
+  .Width > div > p {
+    margin-top: 1rem;
+    line-height: 2rem;
+    padding-right: 0;
+  }
+  .Width > div > h2 {
+    font-size: 14px;
+    letter-spacing: 0.7rem;
+  }
+}

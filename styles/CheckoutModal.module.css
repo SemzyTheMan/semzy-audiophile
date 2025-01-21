@@ -1,0 +1,100 @@
+.Container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Wrap {
+  background-color: white;
+  padding: 2rem;
+}
+.Wrap > * {
+  margin-bottom: 2rem;
+}
+.Wrap1 {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.Wrap2 {
+  background-color: #191919;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 1rem 1rem 0;
+}
+.Wrap2 > h3 {
+  margin-bottom: 1rem;
+}
+.Wrap1 > h3 {
+  font-size: 15px;
+}
+.Wrap1 > img {
+  width: 2rem;
+  margin-right: 2rem;
+}
+.Summary {
+  display: flex;
+}
+.Product {
+  margin-right: 2rem;
+}
+.Summary > * {
+  width: 50%;
+}
+.Summary1 {
+  background-color: #f1f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Summary1 > p {
+  padding: 0.5rem;
+  border-top: 1px solid #ccc;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+}
+.Button {
+  width: 100%;
+  padding: 1.2rem 0;
+  font-size: 18px;
+  color: white;
+  background-color: #d87d4a;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+@media only screen and (max-width: 425px) {
+  .Wrap {
+    width: 90%;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+  .Summary {
+    flex-direction: column;
+  }
+  .Summary > * {
+    width: 100%;
+  }
+  .Wrap > h1 {
+    font-size: 24px;
+  }
+  .Wrap > * {
+    margin-bottom: 1rem;
+  }
+  .Wrap2 {
+    border-radius: 0;
+    padding: 1rem 0;
+  }
+  .Wrap2 > h3 {
+    margin-bottom: 0.5rem;
+  }
+}

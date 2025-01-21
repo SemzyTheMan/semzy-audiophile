@@ -1,0 +1,54 @@
+.Container {
+  background-color: #191919;
+  color: white;
+}
+.Subcontainer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.Link {
+  padding-right: 1.5rem;
+}
+.Subcontainer > ul > * {
+  display: inline;
+}
+.Button {
+  padding: 1rem 2.5rem;
+  background-color: #d87d4a;
+  color: white;
+  border: none;
+  outline: none;
+  margin-top: 1rem;
+}
+.active {
+  color: #d87d4a;
+}
+.black {
+  background-color: #191919;
+}
+.white {
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+}
+.Hamburger {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .Subcontainer > ul > * {
+    font-size: 14.5px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .Subcontainer > ul {
+    display: none;
+  }
+  .Hamburger {
+    display: block;
+  }
+}

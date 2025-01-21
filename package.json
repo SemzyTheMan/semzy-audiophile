@@ -1,0 +1,29 @@
+{
+  "name": "next_app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.1.1",
+    "axios": "^1.2.2",
+    "eslint": "8.31.0",
+    "eslint-config-next": "13.1.1",
+    "framer-motion": "^8.5.0",
+    "next": "13.1.1",
+    "next-redux-wrapper": "^8.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.41.5",
+    "react-intersection-observer": "^9.4.1",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.0",
+    "sass": "^1.57.1",
+    "scss": "^0.2.4",
+    "swr": "^2.0.0"
+  }
+}
