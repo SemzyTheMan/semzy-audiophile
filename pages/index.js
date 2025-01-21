@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styles from "../styles/Home.module.css";
 import ShopSection from "../containers/ShopSection";
 import GearSection from "../containers/GearSection";
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { settotalQuantity } from "../store/action";
 import { useRouter } from "next/router";
