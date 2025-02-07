@@ -30,13 +30,11 @@ function ProductContent() {
     data: productData,
     isLoading: isProductLoading,
     isFetching: isProductFetching,
-   
   } = useGetProductsByIdQuery({ id: Number(id) });
 
-  const { data: categoryData} = useGetAllCategoriesQuery();
+  const { data: categoryData } = useGetAllCategoriesQuery();
 
-  const { data: products } =
-    useGetAllProductsQuery();
+  const { data: products } = useGetAllProductsQuery();
 
   const tempFormattedText = !isProductLoading && productData?.features + "";
   const formattedText =
@@ -46,7 +44,7 @@ function ProductContent() {
   const router = useRouter();
 
   const { addToCart, getCartItems } = manageCart();
-  
+
   const [cart, setCart] = useState([]);
 
   const handleProductClick = (id) => {
@@ -81,12 +79,19 @@ function ProductContent() {
         )}
         <div className={styles.ProductDesc}>
           {isProductLoading || isProductFetching ? (
-            <Skeleton className="h-4" />
+            <Skeleton className="h-[15rem]" />
           ) : (
-            <h1>{productData?.name}</h1>
+            <>
+              <h1>{productData?.name}</h1>
+              <p>{productData?.description}</p>
+            </>
           )}
-          <p>{productData?.description}</p>
-          <p className={styles.price}>₦{productData?.price.toLocaleString()}</p>
+
+          {!(isProductFetching || isProductLoading) && (
+            <p className={styles.price}>
+              ₦{productData?.price.toLocaleString()}
+            </p>
+          )}
           {!(isProductFetching || isProductLoading) && (
             <div className={styles.ProductCart}>
               <p>
@@ -128,7 +133,7 @@ function ProductContent() {
       <div className={styles.Features}>
         <div className={styles.FeatureText}>
           <h1>FEATURES</h1>
-          {isProductLoading ? (
+          {isProductLoading || isProductFetching ? (
             <Skeleton className={"h-[20rem] mb-3"} />
           ) : (
             <div
@@ -140,23 +145,31 @@ function ProductContent() {
         </div>
         <div className={styles.FeatureListSec}>
           <h1>IN THE BOX</h1>
-          <ul className={styles.FeatureList}>
-            {productData?.inThebox.map((el) => {
-              return (
-                <li key={el.item}>
-                  <span style={{ color: "#d87d4a", paddingRight: "0.8rem" }}>
-                    {el.quantity}x{" "}
-                  </span>{" "}
-                  {el.item}
-                </li>
-              );
-            })}
-          </ul>
+          {isProductLoading || isProductFetching ? (
+            <div className="grid grid-cols-1 gap-3 mt-5">
+              {Array.from({ length: 5 }, (_, i) => (
+                <Skeleton key={i} className={"h-10"} />
+              ))}
+            </div>
+          ) : (
+            <ul className={styles.FeatureList}>
+              {productData?.inThebox.map((el) => {
+                return (
+                  <li key={el.item}>
+                    <span style={{ color: "#d87d4a", paddingRight: "0.8rem" }}>
+                      {el.quantity}x{" "}
+                    </span>{" "}
+                    {el.item}
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
       </div>
       <div className={styles.Gallery}>
         <div className={styles.Gallery1}>
-          {isProductLoading ? (
+          {isProductLoading || isProductFetching ? (
             <>
               <Skeleton className={"h-[20rem] mb-3"} />
               <Skeleton className={"h-[20rem]"} />{" "}
@@ -178,7 +191,7 @@ function ProductContent() {
           )}
         </div>
         <div>
-          {isProductLoading ? (
+          {isProductLoading || isProductFetching ? (
             <Skeleton className={"h-full"} />
           ) : (
             <img

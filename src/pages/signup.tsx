@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useSignUpMutation } from "store/services";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
+import { Loader2 } from "lucide-react";
 
 export default function LoginPage() {
   const [name, setName] = useState("");
@@ -38,12 +39,12 @@ export default function LoginPage() {
       toast.success("Account created successfully. Please login.");
       router.push("/login");
     } catch (err) {
-      setError("An error occurred. Please try again.");
+      toast.error(err.data.message);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center px-6 justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Sign up</h1>
         {error && (
@@ -124,8 +125,9 @@ export default function LoginPage() {
           <button
             disabled={isLoading}
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-full bg-blue-600 flex items-center justify-center gap-2 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
+            {isLoading && <Loader2 className="animate-spin" />}
             {isLoading ? "Please wait" : "Sign up"}
           </button>
         </form>
@@ -135,6 +137,7 @@ export default function LoginPage() {
           </Link>
         </p>
       </div>
+      <Toaster richColors position="top-center"/>
     </div>
   );
 }

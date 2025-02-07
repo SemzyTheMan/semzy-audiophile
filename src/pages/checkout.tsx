@@ -10,6 +10,7 @@ import {
 } from "store/services";
 import useGetDetails from "@/hooks/useGetDetails";
 import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 function Checkout() {
   const cartCheck = (state) => state.openCart;
   const cartState = useSelector(cartCheck);
@@ -167,11 +168,13 @@ function Checkout() {
 
           <div className={styles.Wrap2}>
             <h2>TOTAL</h2>
-            <p>₦{checkoutData?.total?.toLocaleString()}</p>
+            <p>₦{isLoading ? "0" : checkoutData?.total?.toLocaleString()}</p>
           </div>
           <div className={styles.Wrap2}>
             <h2>SERVICE CHARGE</h2>
-            <p>₦{checkoutData?.serviceCharge?.toLocaleString()}</p>
+            <p>
+              ₦{isLoading ? "0" : checkoutData?.serviceCharge?.toLocaleString()}
+            </p>
           </div>
           <div className={styles.Wrap2}>
             <h2>VAT(INCLUDED)</h2>
@@ -181,16 +184,19 @@ function Checkout() {
             <h2>GRANDTOTAL</h2>
             <p>
               ₦
-              {(
-                checkoutData?.serviceCharge + checkoutData?.total
-              )?.toLocaleString()}
+              {isLoading
+                ? "0"
+                : (
+                    checkoutData?.serviceCharge + checkoutData?.total
+                  )?.toLocaleString() ?? "0"}
             </p>
           </div>
           <button
             disabled={isContinueLoading}
             onClick={handleSubmit(onSubmit)}
-            className={styles.Continue}
+            className={`${styles.Continue} flex items-center justify-center gap-3`}
           >
+            {isContinueLoading && <Loader2 className="animate-spin" />}
             {isContinueLoading ? "Please wait" : "CONTINUE & PAY"}
           </button>
         </div>

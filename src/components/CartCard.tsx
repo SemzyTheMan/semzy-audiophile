@@ -8,6 +8,7 @@ import { useAddItemsToCartMutation } from "store/services";
 import useGetDetails from "@/hooks/useGetDetails";
 import { toast } from "sonner";
 import { showCart } from "store/reducer";
+import { Loader2 } from "lucide-react";
 function CartCard({ open, onOpenChange }) {
   const router = useRouter();
   const [items, setItems] = useState(null);
@@ -67,7 +68,6 @@ function CartCard({ open, onOpenChange }) {
 
       // Handle forbidden case (status 403)
       if (err?.status == 403) {
-      
         handleForbidden();
         return;
       }
@@ -178,11 +178,12 @@ function CartCard({ open, onOpenChange }) {
                 </div>
                 <button
                   disabled={isLoading}
-                  className={styles.Button}
+                  className={`${styles.Button} flex justify-center items-center gap-3`}
                   onClick={() => {
                     handleAddItemToCart();
                   }}
                 >
+                  {isLoading && <Loader2 className="animate-spin" />}
                   {isLoading ? "Please wait" : "CHECKOUT"}
                 </button>
               </div>
