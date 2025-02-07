@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const ecommerceApi = createApi({
   reducerPath: "ecommerceApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://semzy-the-man.eu-north-1.elasticbeanstalk.com/",
+    baseUrl: "https://semzy-the-man.eu-north-1.elasticbeanstalk.com/",
     prepareHeaders: (headers) => {
       const tempToken = localStorage.getItem("userDetails");
       if (tempToken) {
