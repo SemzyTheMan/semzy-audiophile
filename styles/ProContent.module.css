@@ -18,7 +18,7 @@
 }
 .ProductDesc > h1 {
   font-size: 3rem;
-   color: #191919;
+  color: #191919;
 }
 .ProductCart {
   display: flex;
@@ -57,7 +57,7 @@
   outline: none;
   color: white;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
   .Container {
     width: 90%;
     margin-top: 3rem;
@@ -92,7 +92,7 @@
   width: 100%;
   white-space: pre-wrap;
   margin-top: 2rem;
-  font-family: "Manrope", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.5rem;
   color: #00000080;
 }
@@ -127,12 +127,14 @@
   }
 }
 .Gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
+  gap: 2rem;
   margin-top: 4rem;
+  align-items: stretch;
 }
 .Gallery1 {
-  width: 49.5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -144,15 +146,10 @@
 .Img2 {
   border-radius: 1rem;
 }
-.Gallery2 {
-  width: 49.5%;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  border-radius: 1rem;
-}
-@media only screen and (max-width: 425px) {
+
+@media only screen and (max-width: 600px) {
   .Gallery {
+    grid-template-columns: 1fr;
     flex-direction: column;
   }
   .Gallery1 {
@@ -165,47 +162,14 @@
   }
 }
 .MayLike {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   justify-content: space-between;
+  align-items: stretch;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
   .MayLike {
-    flex-direction: column;
-  }
-}
-.Alert {
-  position: fixed;
-  top: 2rem;
-  left: 3rem;
-  border-radius: 0.4rem;
-  background-color: #07bc0c;
-  display: flex;
-  width: 20rem;
-  align-items: center;
-  padding: 1rem 0.5rem;
-  color: white;
-  animation: alert 0.5s ease-in;
-}
-.Alert > button {
-  background-color: transparent;
-  color: rgba(256, 256, 256, 0.5);
-  border: none;
-  outline: none;
-  font-weight: bold;
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-}
-@keyframes alert {
-  from {
-    transform: translateX(-200%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@media only screen and (max-width: 425px) {
-  .Alert {
-    left: 1rem;
+    grid-template-columns: 1fr;
   }
 }

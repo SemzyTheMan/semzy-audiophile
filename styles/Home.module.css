@@ -54,11 +54,12 @@
   display: flex;
   margin: auto;
   margin-top: 10rem;
+  padding: 0 2rem;
   justify-content: space-between;
   margin-bottom: 5rem;
   color: #000;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
   .ShopSection {
     flex-direction: column;
   }
@@ -68,9 +69,7 @@
     margin-bottom: 2rem;
   }
 }
-.ShopImg {
-  margin-top: -3rem;
-}
+
 .ShopTitle {
   padding: 0.5rem 0;
   color: #000;
@@ -111,7 +110,7 @@
   background-position: -20% -10%;
   margin-bottom: 3rem;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 768px) {
   .ZX9Container {
     width: 90%;
   }
@@ -154,7 +153,7 @@
      background-image: url("../public/images/home/tablet/image-speaker-zx7.jpg");
   }
 } 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
   .ZX7Container {
     width: 90%;
     background-image: url("../public/images/home/mobile/image-speaker-zx7.jpg");
@@ -204,7 +203,7 @@
     padding: 3.5rem;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
   .YX1Container {
     width: 90%;
     margin-top: 3rem;
@@ -238,7 +237,7 @@
     text-align: center;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
   .Width {
     width: 100%;
   }

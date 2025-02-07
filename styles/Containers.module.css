@@ -59,12 +59,12 @@
 }
 .Footer_Container {
   background-color: #191919;
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 3rem;
+  padding: 0 3rem;
 }
 .FooterList {
   color: white;
-  width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -72,17 +72,13 @@
 }
 .FooterList > ul > a {
   padding-right: 2rem;
-  font-family: "Manrope", sans-serif;
 }
 .Footer_Container > p {
-  width: 80%;
-  margin: auto;
   color: #ffffff80;
   line-height: 1.5rem;
   margin-bottom: 2rem;
 }
 .FooterCopy {
-  width: 80%;
   display: flex;
   margin: auto;
   justify-content: space-between;
@@ -92,7 +88,7 @@
   padding-right: 1rem;
   padding-bottom: 3rem;
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
   .FooterList {
     flex-direction: column;
   }
