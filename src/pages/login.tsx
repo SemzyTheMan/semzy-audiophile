@@ -24,7 +24,7 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    router.push("/");
+    
 
     if (!userName || !password) {
       setError("Please fill in all fields.");
