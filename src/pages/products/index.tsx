@@ -15,7 +15,7 @@ import {
 } from "store/services";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Skeleton } from "@/components/ui/skeleton";
-import { manageCart } from "./manageCart";
+import { manageCart } from "../../components/manageCart";
 import { showCart } from "store/reducer";
 import { toast } from "sonner";
 
